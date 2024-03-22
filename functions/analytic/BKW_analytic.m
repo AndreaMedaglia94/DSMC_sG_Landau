@@ -1,10 +1,10 @@
 function [f_BKW_3D, var_BKW_3D, f_BKW_1D, var_BKW_1D, M4] = BKW_analytic(p_sim, time)
 
 if length(time)>1
-    K  = p_sim.Ttot * ( 1 - p_sim.BKW_C .* exp(-4 .* p_sim.BKW_B .* time) );
+    K  = p_sim.Ttot .* ( 1 - p_sim.BKW_C .* exp(-4 .* p_sim.BKW_B .* time) );
     M4      = 9 .* K .* ( 2.*p_sim.Ttot - K ) ; 
-    f_BKW_3D = 0;
-    f_BKW_1D = 0;
+    f_BKW_3D = 0; var_BKW_3D = 0;
+    f_BKW_1D = 0; var_BKW_1D = 0;
 else
 
     % compute the analytic BKW solution at a specific time given the 3D grid v

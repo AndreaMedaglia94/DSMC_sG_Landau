@@ -2,12 +2,21 @@ function output =  cell2array(input, row)
 
 [~, col] = size( input ) ;
 
-for i=1:row
-    output = zeros(length(input{row}), col);
+[ri, ci] = size( input{row} ) ;
+
+if ri > 1
+
+    output = zeros(ri, ci, col);
+        for j=1:col
+            output(:,:,j) = input{row, j};
+        end
+else
+
+    output = zeros(ci, col);
     for j=1:col
         output(:,j) = input{row, j};
     end
-end
 
+end
 
 end

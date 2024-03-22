@@ -40,11 +40,14 @@ for h=1:p_sim.M+1
 end
 
 if sum( isnan(vx_hat),"all" )  ~= 0
-    test = 1 ;
+    fprintf('Error in the initial sampling! \n');
+    stop
 elseif sum( isnan(vy_hat),"all" )  ~= 0
-    test = 1 ;
+    fprintf('Error in the initial sampling! \n');
+    stop
 elseif sum( isnan(vz_hat),"all" )  ~= 0
-    test = 1 ;
+    fprintf('Error in the initial sampling! \n');
+    stop
 end
 
 end

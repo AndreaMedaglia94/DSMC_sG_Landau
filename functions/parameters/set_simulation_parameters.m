@@ -1,12 +1,12 @@
 function [p_sim, Psi] = set_simulation_parameters(p_sch, p_phys)
 
 % number of particles
-p_sim.N  = 5e7; 
+p_sim.N  = 1e6; 
 
 % % % Legendre polynomials % % %
 
 % order of expansion, nodes, and weights
-p_sim.M             = 4;
+p_sim.M             = 1;
 p_sim.Nk            = p_sim.M + 1 ;
 [p_sim.zk,p_sim.wk] = lgwt(p_sim.Nk,-1,1);
 p_sim.nwk           = sum(p_sim.wk);
